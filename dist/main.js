@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/cart */ \"./src/modules/cart.js\");\n/* harmony import */ var _modules_second__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/second */ \"./src/modules/second.js\");\n\r\n\r\n(0,_modules_cart__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\r\n;(0,_modules_second__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n\n//# sourceURL=webpack://9cc54816ae90ba2abbc15f5124d70c74/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/cart */ \"./src/modules/cart.js\");\n/* harmony import */ var _modules_second__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/second */ \"./src/modules/second.js\");\n\r\n\r\n\r\n(0,_modules_cart__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\r\n\r\n;(0,_modules_second__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n\n//# sourceURL=webpack://9cc54816ae90ba2abbc15f5124d70c74/./src/index.js?");
 
 /***/ }),
 
@@ -30,13 +30,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/modules/getData.js":
+/*!********************************!*\
+  !*** ./src/modules/getData.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getData =()=> {\r\n       return  fetch('https://testozon-56a8e-default-rtdb.firebaseio.com/goods.json')\r\n    .then(response => response.json())\r\n    \r\n}\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n//# sourceURL=webpack://9cc54816ae90ba2abbc15f5124d70c74/./src/modules/getData.js?");
+
+/***/ }),
+
+/***/ "./src/modules/postData.js":
+/*!*********************************!*\
+  !*** ./src/modules/postData.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst postData =()=> {\r\n    return  fetch('https://testozon-56a8e-default-rtdb.firebaseio.com/goods.json', {\r\n        method: 'POST',\r\n        body: JSON.stringify({\r\n            title: \"Моя сони\",\r\n            price: 33990,\r\n            sale: false,\r\n            img: \"https://cdn1.ozone.ru/multimedia/c400/1033180284.jpg\",\r\n            hoverImg: \"https://cdn1.ozone.ru/multimedia/c400/1033180283.jpg\",\r\n            category: \"Пристаквка\"\r\n        }),\r\n        headers: {\r\n          'Content-type': 'application/json; charset=UTF-8',\r\n        },\r\n      })\r\n        .then((response) => response.json())\r\n      \r\n}\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postData);\n\n//# sourceURL=webpack://9cc54816ae90ba2abbc15f5124d70c74/./src/modules/postData.js?");
+
+/***/ }),
+
 /***/ "./src/modules/second.js":
 /*!*******************************!*\
   !*** ./src/modules/second.js ***!
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Инкапсулируем код создав функцию cart иначе если мы будем использоватьв других файлах названия переменных к примеру cartModal будет ошибка. Мы замкнули переменные в определенной области видимости\r\nconst second = ()=> {\r\n  console.log(\"se33cond\")\r\n}\r\n /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (second);\r\n// такой подход называется инкапсуляция кода\n\n//# sourceURL=webpack://9cc54816ae90ba2abbc15f5124d70c74/./src/modules/second.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData */ \"./src/modules/getData.js\");\n/* harmony import */ var _postData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./postData */ \"./src/modules/postData.js\");\n// Инкапсулируем код создав функцию cart иначе если мы будем использоватьв других файлах названия переменных к примеру cartModal будет ошибка. Мы замкнули переменные в определенной области видимости\r\n\r\n\r\nconst second = ()=> {\r\n  const cardButton = document.getElementById('cart')\r\n  ;(0,_getData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then(data => console.log(data))\r\n  cardButton.addEventListener('click',()=>{\r\n    // postData().then(data => console.log(data))\r\n  \r\n  })\r\n}\r\n /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (second);\r\n// такой подход называется инкапсуляция кода\n\n//# sourceURL=webpack://9cc54816ae90ba2abbc15f5124d70c74/./src/modules/second.js?");
 
 /***/ })
 
